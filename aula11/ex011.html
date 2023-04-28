@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrangeiro ou não</title>
+    <style>
+        body, input {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        #clique {
+            background-color: bisque;
+            color: black;
+            width: 90px;
+            height: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste de país</h1>
+    De que país você é? <br> <input type="text" name="txtcountry" id="txtcountry">
+    <input type="button" id="clique" value="Confirmar" onclick="conferir()">
+    <div id="res"></div>
+
+    <script>
+        function conferir () {
+        var txtp = document.querySelector('input#txtcountry')
+        var res = document.querySelector('div#res')
+        var pais = String(txtp.value)
+        res.innerHTML = `<p>Você é do país ${pais}</p>`
+        if (pais != 'Brasil') {
+            res.innerHTML += `<p>Você é <strong style="color: #e78">ESTRANGEIRO</strong></p>`
+        } else {
+            res.innerHTML += `<p>Você é <strong style="color: #dad">BRASILEIRO</strong></p>`
+        }
+        res.innerHTML += `<p>Bem-vindo(a) ao Brasil!</p>`
+        }
+    </script>
+</body>
+</html>
